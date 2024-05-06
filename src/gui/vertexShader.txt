@@ -1,0 +1,16 @@
+#version 130
+
+
+in vec2 position;
+
+uniform mat4 tranformationMatrix;
+
+out vec2 texture;
+
+
+void main(){
+
+	gl_Position = tranformationMatrix * vec4(position, 0.0, 1.0);
+	texture = vec2((position.x+1.0)/2.0, 1 - (position.y+1.0)/2.0);
+	
+}
